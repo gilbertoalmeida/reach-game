@@ -27,14 +27,33 @@
 }
 
 .resources__container {
-  border: black 1px solid;
-  width: 400px;
+  width: 500px;
 }
 
+@media (max-width: 510px) {
+  .resources__container {
+    width: 95%;
+  }
+}
+
+/* substituted by the card title below */
 .resources__container__title {
   text-align: center;
   font-size: 18px;
   padding: 3px;
+}
+
+.ant-card-head-title {
+  font-size: 20px;
+  padding: 8px 0;
+}
+
+.ant-card-extra {
+  font-size: 24px;
+  font-style: italic;
+  font-weight: bold;
+  color: rgb(83, 123, 223);
+  padding: 8px 0;
 }
 
 .resources__container__body {
@@ -62,8 +81,6 @@
 
 .upgrades {
   border: black 1px solid;
-  padding: 3px;
-  width: 30px;
   line-height: 1.3;
 }
 

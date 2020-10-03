@@ -6,9 +6,7 @@ import { useInterval } from "../utils";
 import Wapp from "./resources/Wapp";
 
 const Game = () => {
-  window.scrollTo(0, 0);
-
-  const [currentReach, setCurrentReach] = useState(1000);
+  const [currentReach, setCurrentReach] = useState(10000);
   const [reachPerSecond, setReachPerSecond] = useState(0);
   const [cattleReachPerSecond, setCattleReachPerSecond] = useState(0);
   const [wappReachPerSecond, setWappReachPerSecond] = useState(0);

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Popover, Button, Card } from "antd";
 
 const Cattle = ({
   cattleNumber,
@@ -29,44 +30,52 @@ const Cattle = ({
     setCattleAverageFriends(cattleAverageFriends * 2);
   };
 
+  const cattleUpgradePopoverContent = (
+    <div>Alcance necessário: tá de graça agora</div>
+  );
+
   return (
     <div className="cattle__area">
       <div className="resources__container">
-        <div className="resources__container__title">
-          <div>
-            <b>Gado ( {cattleNumber} )</b>
-          </div>
-        </div>
-        <div className="resources__container__body">
-          <div className="resources__container__body__main">
-            <div className="resources__container__body__main__info">
-              <div>Membros do gado postam sobre você a cada hora</div>
-              <div>
-                As redes de cada um têm em média: {cattleAverageFriends} amigos
+        <Card title="Gado" extra={cattleNumber}>
+          <div className="resources__container__body">
+            <div className="resources__container__body__main">
+              <div className="resources__container__body__main__info">
+                <div>Membros do gado postam sobre você a cada hora</div>
+                <div>
+                  As redes de cada um têm em média: {cattleAverageFriends}{" "}
+                  amigos
+                </div>
+              </div>
+              <div className="resources__container__body__main__button">
+                <button
+                  className="buy-button cattle__button"
+                  onClick={addOneToTheCattle}
+                  disabled={currentReach < necessaryReachForPlusOneToTheCattle}
+                >
+                  <div>
+                    +1 pro gado (Alcance necessário:{" "}
+                    {necessaryReachForPlusOneToTheCattle})
+                  </div>
+                </button>
               </div>
             </div>
-            <div className="resources__container__body__main__button">
-              <button
-                className="buy-button cattle__button"
-                onClick={addOneToTheCattle}
-                disabled={currentReach < necessaryReachForPlusOneToTheCattle}
+            <div className="resources__container__body__upgrades">
+              <Popover
+                title="Upgrade amigos do gado"
+                content={cattleUpgradePopoverContent}
+                trigger="hover"
               >
-                <div>
-                  +1 pro gado (Alcance necessário:{" "}
-                  {necessaryReachForPlusOneToTheCattle})
-                </div>
-              </button>
+                <Button
+                  className="upgrades upgrades__more-friends"
+                  onClick={upgradeCattleFriends}
+                >
+                  ⬆ F
+                </Button>
+              </Popover>
             </div>
           </div>
-          <div className="resources__container__body__upgrades">
-            <button
-              className="upgrades upgrades__more-friends"
-              onClick={upgradeCattleFriends}
-            >
-              ⬆F
-            </button>
-          </div>
-        </div>
+        </Card>
       </div>
     </div>
   );
