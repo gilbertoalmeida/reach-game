@@ -16,8 +16,8 @@ const Game = () => {
 
   /* Starts the ReachPerSecond loop */
   useInterval(() => {
-    setCurrentReach(currentReach + reachPerSecond);
-  }, 1000);
+    setCurrentReach(currentReach + reachPerSecond / 10);
+  }, 100);
 
   useEffect(() => {
     setReachPerSecond(cattleReachPerSecond + wappReachPerSecond);

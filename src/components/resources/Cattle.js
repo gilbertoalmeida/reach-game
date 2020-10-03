@@ -13,7 +13,7 @@ const Cattle = ({
     necessaryReachForPlusOneToTheCattle,
     setNecessaryReachForPlusOneToTheCattle
   ] = useState(130);
-  const [cattleAverageFriends, setCattleAverageFriends] = useState(5);
+  const [cattleAverageFriends, setCattleAverageFriends] = useState(50);
 
   const addOneToTheCattle = () => {
     setCurrentReach(currentReach - necessaryReachForPlusOneToTheCattle);

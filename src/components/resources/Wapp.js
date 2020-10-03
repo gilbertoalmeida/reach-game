@@ -14,7 +14,7 @@ const Wapp = ({
     setNecessaryReachForPlusOneWapp
   ] = useState(560);
 
-  const [wappAverageParticipants, setWappAverageParticipants] = useState(30);
+  const [wappAverageParticipants, setWappAverageParticipants] = useState(100);
 
   const addOneWapp = () => {
     setCurrentReach(currentReach - necessaryReachForPlusOneWapp);
